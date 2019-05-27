@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+virtualenv/
+enviroment/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+modelTrainerEnv/
+
+# model and dataset
+test_data
+credentials/
+dataset/data_changed.csv
+dataset/test_data.csv
+token.pickle
