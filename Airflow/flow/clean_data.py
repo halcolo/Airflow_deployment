@@ -1,12 +1,13 @@
 from __future__ import print_function
 import pandas as pd
+from AirFLow import Variable
 # from google.oauth2 import service_account
 from tqdm import tqdm
 
 
 def clean_load(ds, **kwargs):
-    url = 'https://docs.google.com/spreadsheet/ccc?key='
-    sheet = url + '1oYPhZbGVOJPrmmvoJ23ZjKubmV4KpBgle3uQaP7_Dyw&output=csv'
+    # Set the sheet URL in the variables page of Airflow
+    sheet = Variable.get("sheet_URL")
     # Download the spreadsheet as CSV
     data = pd.read_csv(
         sheet
@@ -51,12 +52,12 @@ def clean_load(ds, **kwargs):
     # To print the table in command line
     # print(data.head)
     try:
-
-        # data.to_csv('dataset/data_changed.csv', index=False)
-        data.to_gbq('PRUEBAS_GCP.testJalfonsoBQ',
+        # Set the variables inAirflow
+        data.to_gbq(Variable.get("Bigquery_dataset"),
                     if_exists='replace',
-                    project_id='test-jalfonso'
-                    # credentials=credentials
+                    project_id=Variable.get("GCP_project")
+                    # set credentials if is necesssary
+                    # credentials=Variable.get("GCP_credentials")
                     )
 
     except Exception as e:

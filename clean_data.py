@@ -31,23 +31,23 @@ class Clean_data():
         for i in tqdm(range(int(1e3))):
             pass
 
-        # Dictionary for the moths
-        month = {'November': '11',
-                 'December': '12'}
-
+        # # Dictionary for the moths
+        # month = {'November': '11',
+        #          'December': '12'}
+        #
         # Split the NaN values
         data['quarter_hour'] = (data['quarter_hour'].fillna('00:00'))
-
-        # datetime.timedelta(hours=0000)))
-        data['category'] = data['category'].fillna('N/A')
-
-        # Replace data
-        data['month'] = data.month.map(month)
-
-        data['date'] = pd.to_datetime(dict(year=data['year'],
-                                           month=data['month'],
-                                           day=data['day_of_month']),
-                                      utc=True)
+        #
+        # # datetime.timedelta(hours=0000)))
+        # data['category'] = data['category'].fillna('N/A')
+        #
+        # # Replace data
+        # data['month'] = data.month.map(month)
+        #
+        # data['date'] = pd.to_datetime(dict(year=data['year'],
+        #                                    month=data['month'],
+        #                                    day=data['day_of_month']),
+        #                               utc=True)
 
         print('-' * 50)
         print('After Data split.')
@@ -68,12 +68,12 @@ class Clean_data():
         # except Exception as e1:
         #     print("General exception: ", e1)
         # Describe all the fileds after the treatment
-        print(data.describe(include='all'))
+        # print(data.describe(include='all'))
 
         # To print the table in command line
-        print(data.head)
+        # print(data.head)
         try:
-            data.to_csv(self.csvFile, index=False)
+            # data.to_csv(self.csvFile, index=False)
             data.to_gbq(self.bqDatabase,
                         if_exists='replace',
                         credentials=credentials

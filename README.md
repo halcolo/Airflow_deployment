@@ -32,13 +32,15 @@ The principal files are.
     ├── Airflow
     │   ├── main.py
     │   └── flow
-    |       └──clean_data.py 
+    |       └──clean_data.py
     ├── pipeline.py
     ├── clean_data.txt
     ├── spreadsheet.txt
     └── variables.py
 
-With the three files from root, you can see the classes at 'spreadsheet.py' and 'clean_data.py', and the 'variables.py' have the variables to call the process, please change the variables before run the application, to run you can install the requirements in your virtualEnv or in your localEnv, to run the process at Airflow, just upload the files 'main.py' and 'clean_data.py' located at Airflow Dag's folder, change the variables from the 'clean_data.py'.
+With the three files from root, you can see the classes at 'spreadsheet.py' and 'clean_data.py', and the 'variables.py' have the variables to call the process, please set the variables before run the application in airflor or to test in local ('variables.py').
+´Alternative: Use enviroment variables to replace th efile "variables.py" and read the enviroment variables with python.os library´
+To run you can install the requirements in your virtualEnv or in your localEnv, to run the process at Airflow, just upload the files 'main.py' and 'clean_data.py' located at Airflow Dag's folder, replace the variables from the 'clean_data.py'.
 
 | Aplication| Version|
 | ------ | ------ |
