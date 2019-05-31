@@ -7,6 +7,7 @@ from tqdm import tqdm
 
 def clean_load(ds, **kwargs):
     # Set the sheet URL in the variables page of Airflow
+    # to download as csv include &output=csv at tale of the URL.
     sheet = Variable.get("sheet_URL")
     # Download the spreadsheet as CSV
     data = pd.read_csv(
