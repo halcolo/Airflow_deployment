@@ -3,23 +3,32 @@ from airflow import DAG
 from AirFLow import Variable
 # from airflow.models import Variable
 from airflow.operators.python_operator import PythonOperator
-from clean_data import clean_load
+
 
 default_args = {
-    # Set variables at the AirFLow variables page
-    # and import Airflow.Variable.
-    "owner": Variable.get("dag_owner"),
-    "depends_on_past": False,
-    "start_date": datetime(2018, 5, 20),
-    "email": Variable.get("dag_email"),
-    # If you have various email adress replace with follow code.
-    # At the variables you copy mails as mail1@mail.com,mail2@mail.com
-    # [mail.strip() for mail in Variable.get('dag_emails_report').split(',')]
-    "email_on_failure": Variable.get("dag_email_failure"),
-    "email_on_retry": Variable.get("dag_email_retry"),
-    "retries": 0,
-    "retry_delay": timedelta(minutes=5),
+    'owner': 'airflow',
+    'depends_on_past': False,
+    'start_date': days_ago(2),
+    'email': ['airflow@example.com'],
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 1,
+    'retry_delay': timedelta(minutes=5),
+    'end_date': datetime(2030, 1, 1),
+    # 'queue': 'bash_queue',
+    # 'pool': 'backfill',
+    # 'priority_weight': 10,
+    # 'wait_for_downstream': False,
+    # 'dag': dag,
+    # 'sla': timedelta(hours=2),
+    # 'execution_timeout': timedelta(seconds=300),
+    # 'on_failure_callback': some_function,
+    # 'on_success_callback': some_other_function,
+    # 'on_retry_callback': another_function,
+    # 'sla_miss_callback': yet_another_function,
+    # 'trigger_rule': 'all_success'
 }
+
 
 dag = DAG("airflow-jalfons",
           default_args=default_args,

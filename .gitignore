@@ -21,3 +21,9 @@ credentials/
 dataset/data_changed.csv
 dataset/test_data.csv
 token.pickle
+
+# IDEA
+.idea/
+
+# Airflow
+AIRFLOW_HOME/
