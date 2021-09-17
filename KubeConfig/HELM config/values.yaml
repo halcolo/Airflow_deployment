@@ -161,7 +161,11 @@ rbac:
 
 # Airflow executor
 # Options: LocalExecutor, CeleryExecutor, KubernetesExecutor, CeleryKubernetesExecutor
+<<<<<<< HEAD
 executor: "KubernetesExecutor"
+=======
+executor: "CeleryExecutor"
+>>>>>>> 64ba5bbb1236e1de7412799a8ccc50b4f319c809
 
 # If this is true and using LocalExecutor/KubernetesExecutor/CeleryKubernetesExecutor, the scheduler's
 # service account will have access to communicate with the api-server and launch pods.

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: airflow
+  name: airflow-variables
+data:
+  AIRFLOW_VAR_MY_GCP_BUCKET: "my_gcp_name"
