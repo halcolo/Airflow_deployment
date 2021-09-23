@@ -1,0 +1,2 @@
+airflow-provider-great-expectations==0.0.8
+apache-airflow-providers-cncf-kubernetes==2.0.2
