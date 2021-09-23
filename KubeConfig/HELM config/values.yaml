@@ -170,9 +170,9 @@ executor: "KubernetesExecutor"
 allowPodLaunching: true
 
 # Environment variables for all airflow containers
-env:
-- name: "hello"
-  value: "World"
+env: []
+# - name: ""
+#   value: ""
 
 # Secrets for all airflow containers
 secret: []
@@ -1167,7 +1167,7 @@ dags:
     # git@github.com:apache/airflow.git
     # https example: https://github.com/apache/airflow.git
     repo: https://github.com/halcolo/Airflow_deployment.git
-    branch: main
+    branch: master
     rev: HEAD
     depth: 1
     # the number of consecutive failures allowed before aborting
